@@ -1,26 +1,23 @@
-## compute_input.py
-
-import sys, json, numpy as np
+import sys, json
 
 #Read data from stdin
 def read_in():
     lines = sys.stdin.readlines()
-    #Since our input would only be having one line, parse our JSON data from that
+    # Since our input would only be having one line, parse our JSON data from that
     return json.loads(lines[0])
 
 def main():
     #get our data as an array from read_in()
     lines = read_in()
 
-    #create a numpy array
-    np_lines = np.array(lines)
-
-    #use numpys sum method to find sum of all elements in the array
-    lines_sum = np.sum(np_lines)
+    # Sum  of all the items in the providen array
+    total_sum_inArray = 0
+    for item in lines:
+        total_sum_inArray += item
 
     #return the sum to the output stream
-    print(lines_sum)
+    print(total_sum_inArray)
 
-#start process
+# Start process
 if __name__ == '__main__':
     main()
